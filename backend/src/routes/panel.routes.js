@@ -7,5 +7,4 @@ import { verificarToken, soloAdmin } from "../middlewares/autenticacion.middlewa
 const panelRouter = express.Router()
 
 panelRouter.post("/", verificarToken, soloAdmin, publicarProducto)
-
 export default panelRouter
