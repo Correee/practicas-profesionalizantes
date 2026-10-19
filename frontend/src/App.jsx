@@ -1,4 +1,6 @@
+
 import { Login } from './pages/Login'
+import { Nosotros } from './pages/Nosotros'
 import './App.css'
 
 function App() {
@@ -6,6 +8,10 @@ function App() {
 
   if (path === '/' || path === '/login') {
     return <Login />
+  }
+
+  if (path === '/nosotros') {
+    return <Nosotros />
   }
 
   return (
@@ -18,3 +24,4 @@ function App() {
 }
 
 export default App
+

@@ -17,6 +17,7 @@ function BrandHeader({ session, onLogout, onRegister, onLogin }) {
 
         <nav className="main-nav" aria-label="Navegación principal">
           <a href="/inicio">Inicio</a>
+          <a href="/nosotros">Nosotros</a>
           <a href="/catalogo">Catálogo</a>
           <a href="/inspiracion">Inspiración</a>
           <a href="/ayuda">Ayuda</a>
