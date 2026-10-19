@@ -1,10 +1,12 @@
 import express from "express"
 import {
-    login
+    login,
+    registrar
 } from "../controllers/autenticacion.controller.js"
 
 const autenticacionRouter = express.Router()
 
-autenticacionRouter.get("/login", login)
+autenticacionRouter.post("/login", login)
+autenticacionRouter.post("/register", registrar)
 
 export default autenticacionRouter
