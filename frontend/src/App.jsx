@@ -1,5 +1,6 @@
 
 import { Login } from './pages/Login'
+import { Catalogo } from './pages/Catalogo'
 import './App.css'
 
 function App() {
@@ -7,6 +8,10 @@ function App() {
 
   if (path === '/login') {
     return <Login />
+  }
+
+  if (path === '/catalogo') {
+    return <Catalogo />
   }
 
   return (
