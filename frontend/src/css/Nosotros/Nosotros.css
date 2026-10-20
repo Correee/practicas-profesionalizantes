@@ -274,3 +274,12 @@
     box-sizing: border-box;
   }
 }
+
+.nosotros-page { color: #302b2a; }
+.nosotros-hero { background: radial-gradient(ellipse at center, #fcfaf6, #f7f4ef 72%); }
+.nosotros-hero-content > p,
+.nosotros-historia-content p,
+.nosotros-section-heading p,
+.nosotros-valor-card p { color: #827b75; }
+.nosotros-valor-card { border-color: #ede6dd; box-shadow: 0 8px 24px rgb(75 55 47 / 5%); }
+.nosotros-cierre { background-color: #eee7df; }

@@ -2,13 +2,13 @@
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background: #fbf6f1;
+  background: #f7f4ef;
 }
 
 .catalogo-main {
   flex: 1;
   padding: 54px clamp(20px, 7vw, 108px) 72px;
-  background: radial-gradient(ellipse at top, #fdf3ef, #fbf6f1 70%);
+  background: radial-gradient(ellipse at top, #fcfaf6, #f7f4ef 70%);
 }
 
 .catalogo-head {
@@ -19,7 +19,7 @@
 
 .catalogo-kicker {
   margin: 0 0 12px;
-  color: #9c5b4c;
+  color: #9a765e;
   font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -27,7 +27,7 @@
 
 .catalogo-head h1 {
   margin: 0;
-  color: #43392d;
+  color: #443640;
   font-family: Georgia, serif;
   font-size: clamp(30px, 4vw, 40px);
   font-weight: 500;
@@ -36,7 +36,7 @@
 
 .catalogo-intro {
   margin: 12px 0 28px;
-  color: #7a6f5e;
+  color: #827b75;
   font-size: 13px;
   line-height: 1.7;
 }
@@ -47,7 +47,7 @@
   flex-direction: column;
   gap: 7px;
   margin: 0 auto;
-  color: #43392d;
+  color: #49423e;
   font-size: 11px;
   font-weight: 600;
   text-align: left;
@@ -56,15 +56,15 @@
 .catalog-search input {
   height: 44px;
   padding: 0 14px;
-  border: 1px solid #ece2d4;
-  border-radius: 9px;
-  background: #fffdf9;
-  color: #43392d;
+  border: 1px solid #e8e1d9;
+  border-radius: 4px;
+  background: #fffdfa;
+  color: #403a36;
   font-size: 13px;
 }
 
 .catalog-search input::placeholder {
-  color: #b8ad97;
+  color: #b6afa8;
 }
 
 .catalog-grid {
@@ -77,16 +77,16 @@
 
 .product-card {
   overflow: hidden;
-  border: 1px solid #ece2d4;
-  border-radius: 14px;
-  background: #fffdf9;
-  box-shadow: 0 8px 24px rgb(61 53 40 / 8%);
-  transition: transform .25s ease, box-shadow .25s ease;
+  border: 1px solid #ede6dd;
+  border-radius: 8px;
+  background: #fffdfa;
+  box-shadow: 0 8px 24px rgb(75 55 47 / 7%);
+  transition: transform .2s ease, box-shadow .2s ease;
 }
 
 .product-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 14px 32px rgb(61 53 40 / 12%);
+  box-shadow: 0 14px 32px rgb(75 55 47 / 12%);
 }
 
 .product-card.agotado {
@@ -110,7 +110,7 @@
 
 .product-name {
   margin: 0 0 8px;
-  color: #43392d;
+  color: #443640;
   font-family: Georgia, serif;
   font-size: 21px;
   font-weight: 500;
@@ -121,7 +121,7 @@
   display: -webkit-box;
   overflow: hidden;
   margin: 0 0 14px;
-  color: #7a6f5e;
+  color: #827b75;
   font-size: 13px;
   line-height: 1.6;
   -webkit-box-orient: vertical;
@@ -136,7 +136,7 @@
 }
 
 .product-price {
-  color: #43392d;
+  color: #443640;
   font-size: 17px;
   font-weight: 500;
 }
@@ -144,22 +144,22 @@
 .stock-chip {
   padding: 4px 10px;
   border-radius: 999px;
-  background: #e6f2e6;
-  color: #4f8158;
+  background: #f3f8f1;
+  color: #52744f;
   font-size: 10px;
   letter-spacing: .5px;
 }
 
 .stock-chip.out {
   background: #f0ebe5;
-  color: #7a6f5e;
+  color: #827b75;
 }
 
 .catalog-state {
   max-width: 1120px;
   margin: 0 auto;
   padding: 48px 16px;
-  color: #7a6f5e;
+  color: #827b75;
   font-size: 14px;
   text-align: center;
 }

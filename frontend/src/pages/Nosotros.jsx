@@ -1,20 +1,47 @@
+import { useState } from "react";
 import { BrandHeader } from "../components/BrandHeader";
 import { StoreFooter } from "../components/StoreFooter";
-import "./Nosotros.css";
+import "../css/Login/Login.css";
+import "../css/Nosotros/Nosotros.css";
+
+const SESSION_KEY = "reinaMadreAuth";
+
+function leerSesion() {
+  try {
+    const guardada = localStorage.getItem(SESSION_KEY) || sessionStorage.getItem(SESSION_KEY);
+    if (!guardada) return null;
+    const sesion = JSON.parse(guardada);
+    const partes = sesion.token?.split(".");
+    if (!sesion.usuario?.email || partes?.length !== 3) return null;
+    const payload = partes[1].replace(/-/g, "+").replace(/_/g, "/");
+    const datos = JSON.parse(atob(payload.padEnd(Math.ceil(payload.length / 4) * 4, "=")));
+    if (typeof datos.exp !== "number" || datos.exp * 1000 <= Date.now()) return null;
+    return sesion;
+  } catch {
+    return null;
+  }
+}
 
 function Nosotros() {
+  const [session, setSession] = useState(leerSesion);
+
+  function cerrarSesion() {
+    try { localStorage.removeItem(SESSION_KEY); } catch { /* El almacenamiento puede estar deshabilitado. */ }
+    try { sessionStorage.removeItem(SESSION_KEY); } catch { /* El almacenamiento puede estar deshabilitado. */ }
+    setSession(null);
+  }
+
   return (
     <>
       <BrandHeader
+        session={session}
         onLogin={() => {
           window.location.href = "/login";
         }}
         onRegister={() => {
           window.location.href = "/login";
         }}
-        onLogout={() => {
-          window.location.href = "/login";
-        }}
+        onLogout={cerrarSesion}
       />
 
       <main className="nosotros-page">
