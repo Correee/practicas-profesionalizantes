@@ -1,3 +1,5 @@
+import logoBlack from '../assets/logo-black.svg'
+
 function BrandHeader({ session, onLogout, onRegister, onLogin }) {
   function closeMenu(event) {
     event.currentTarget.closest('details').open = false
@@ -10,17 +12,14 @@ function BrandHeader({ session, onLogout, onRegister, onLogin }) {
       </div>
 
       <header className="site-header">
-        <div className="brand" aria-label="Reina Madre">
-          <span className="brand-mark" aria-hidden="true">✿</span>
-          <span className="brand-wordmark"><strong>REINA MADRE</strong></span>
-        </div>
+        <a className="brand" href="/inicio" aria-label="Reina Madre, inicio">
+          <img className="brand-logo" src={logoBlack} alt="Reina Madre" />
+        </a>
 
         <nav className="main-nav" aria-label="Navegación principal">
           <a href="/inicio">Inicio</a>
           <a href="/nosotros">Nosotros</a>
           <a href="/catalogo">Catálogo</a>
-          <a href="/inspiracion">Inspiración</a>
-          <a href="/ayuda">Ayuda</a>
         </nav>
 
         <details className="profile-control">

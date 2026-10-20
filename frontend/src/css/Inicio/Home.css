@@ -1,6 +1,4 @@
 
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap");
-
 :root {
   --home-fondo: #f7f4ef;
   --home-ciruela: #4e3a46;
@@ -17,7 +15,7 @@
   min-height: 100vh;
   background: var(--home-fondo);
   color: var(--home-texto);
-  font-family: "DM Sans", sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 .home * {
@@ -64,7 +62,7 @@
   place-items: center;
   border: 1px solid var(--home-marron);
   border-radius: 50%;
-  font-family: "Playfair Display", serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 17px;
 }
 
@@ -72,13 +70,13 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  font-family: "Playfair Display", serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 18px;
   letter-spacing: 1.2px;
 }
 
 .home-logo-texto small {
-  font-family: "DM Sans", sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 8px;
   letter-spacing: 1.6px;
 }
@@ -148,7 +146,7 @@
 .home-hero h1 {
   margin: 20px 0 18px;
   color: var(--home-ciruela);
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(39px, 4.5vw, 60px);
   font-weight: 500;
   line-height: 1.13;
@@ -255,7 +253,7 @@
 
 .home-tarjeta-titulo {
   color: var(--home-ciruela);
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 22px;
   line-height: 1.4;
 }
@@ -349,7 +347,7 @@
 .home-cta h2 {
   margin: 10px 0;
   color: var(--home-ciruela);
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(28px, 3vw, 38px);
   font-weight: 500;
 }
@@ -405,7 +403,7 @@
 
 .home-producto-monograma {
   color: rgba(78, 58, 70, 0.45);
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 65px;
 }
 
@@ -425,7 +423,7 @@
 .home-producto-info h3 {
   margin: 0 0 8px;
   color: var(--home-ciruela);
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 18px;
   font-weight: 500;
   overflow-wrap: anywhere;
@@ -541,7 +539,7 @@
 
 .home-footer-logo {
   color: var(--home-ciruela) !important;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 17px;
   letter-spacing: 1px;
 }

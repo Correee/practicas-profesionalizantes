@@ -1,10 +1,21 @@
 
 import { Login } from './pages/Login'
 import { Catalogo } from './pages/Catalogo'
+import { AdminDashboard } from './pages/AdminDashboard'
+import Home from './pages/Home'
+import { Nosotros } from './pages/Nosotros'
 import './App.css'
 
 function App() {
   const path = window.location.pathname
+
+  if (path === '/' || path === '/inicio') {
+    return <Home />
+  }
+
+  if (path === '/nosotros') {
+    return <Nosotros />
+  }
 
   if (path === '/login') {
     return <Login />
@@ -12,6 +23,10 @@ function App() {
 
   if (path === '/catalogo') {
     return <Catalogo />
+  }
+
+  if (path === '/admin') {
+    return <AdminDashboard />
   }
 
   return (

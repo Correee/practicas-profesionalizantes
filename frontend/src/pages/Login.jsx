@@ -213,6 +213,8 @@ function Login() {
     } catch {
       // The session stays active until this page is closed.
     }
+
+    if (data.usuario?.rol === 'Admin') window.location.href = '/admin'
   }
 
   function handleLogout() {

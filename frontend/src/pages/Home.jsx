@@ -1,10 +1,28 @@
 
 import { useEffect, useState } from "react";
-import "./Home.css";
+import { BrandHeader } from "../components/BrandHeader";
+import { StoreFooter } from "../components/StoreFooter";
+import "../css/Inicio/Home.css";
 
 const API_URL = (
   import.meta.env.VITE_API_URL || "http://localhost:3000"
 ).replace(/\/$/, "");
+const SESSION_KEY = "reinaMadreAuth";
+
+function cargarSesion() {
+  try {
+    const saved = localStorage.getItem(SESSION_KEY) || sessionStorage.getItem(SESSION_KEY);
+    if (!saved) return null;
+    const session = JSON.parse(saved);
+    const parts = session.token?.split(".");
+    if (!session.usuario?.email || parts?.length !== 3) return null;
+    const payload = parts[1].replace(/-/g, "+").replace(/_/g, "/");
+    const data = JSON.parse(atob(payload.padEnd(Math.ceil(payload.length / 4) * 4, "=")));
+    return typeof data.exp === "number" && data.exp * 1000 > Date.now() ? session : null;
+  } catch {
+    return null;
+  }
+}
 
 function formatoPrecio(precio) {
   return new Intl.NumberFormat("es-AR", {
@@ -15,6 +33,7 @@ function formatoPrecio(precio) {
 }
 
 function Home() {
+  const [session, setSession] = useState(cargarSesion);
   const [productos, setProductos] = useState([]);
   const [cargando, setCargando] = useState(true);
   const [error, setError] = useState("");
@@ -66,31 +85,20 @@ function Home() {
     });
   }
 
+  function cerrarSesion() {
+    try { localStorage.removeItem(SESSION_KEY); } catch { /* El almacenamiento puede estar deshabilitado. */ }
+    try { sessionStorage.removeItem(SESSION_KEY); } catch { /* El almacenamiento puede estar deshabilitado. */ }
+    setSession(null);
+  }
+
   return (
     <div className="home">
-      <div className="home-anuncio">
-        Un espacio pensado para acompañarte
-      </div>
-
-      <header className="home-header">
-        <a className="home-logo" href="/" aria-label="Reina Madre, inicio">
-          <span className="home-logo-simbolo">RM</span>
-          <span className="home-logo-texto">
-            REINA MADRE
-            <small>BIENESTAR Y CUIDADO</small>
-          </span>
-        </a>
-
-        <nav className="home-nav" aria-label="Navegación principal">
-          <a className="activo" href="/">Inicio</a>
-          <a href="#productos">Productos</a>
-          <a href="#nosotros">Nosotros</a>
-        </nav>
-
-        <a className="home-cuenta" href="/login">
-          Mi cuenta <span aria-hidden="true">↗</span>
-        </a>
-      </header>
+      <BrandHeader
+        session={session}
+        onLogin={() => { window.location.href = "/login"; }}
+        onRegister={() => { window.location.href = "/login"; }}
+        onLogout={cerrarSesion}
+      />
 
       <main>
         <section className="home-hero">
@@ -174,7 +182,7 @@ function Home() {
               <p>Conocé lo que tenemos para ofrecerte.</p>
             </div>
 
-            <a className="home-ver-mas" href="/login">
+            <a className="home-ver-mas" href="/catalogo">
               Explorar <span aria-hidden="true">→</span>
             </a>
           </div>
@@ -265,13 +273,7 @@ function Home() {
         </section>
       </main>
 
-      <footer className="home-footer">
-        <a className="home-footer-logo" href="/">
-          REINA MADRE
-        </a>
-        <p>Un espacio de cuidado y bienestar.</p>
-        <span>© {new Date().getFullYear()} Reina Madre</span>
-      </footer>
+      <StoreFooter />
     </div>
   );
 }

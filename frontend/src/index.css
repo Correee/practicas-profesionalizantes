@@ -1,3 +1,25 @@
+ :root {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #302b2a;
+  background: #f7f4ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --rm-ink: #302b2a;
+  --rm-plum: #4e3a46;
+  --rm-plum-soft: #604b57;
+  --rm-plum-deep: #443640;
+  --rm-tan: #b28c70;
+  --rm-tan-deep: #947157;
+  --rm-paper: #fffdfa;
+  --rm-background: #f7f4ef;
+  --rm-muted: #827b75;
+  --rm-border: #ede6dd;
+}
+
+* { box-sizing: border-box; }
 html { min-width: 320px; min-height: 100%; }
-body { margin: 0; min-width: 320px; min-height: 100vh; }
+body { margin: 0; min-width: 320px; min-height: 100vh; font-family: 'Segoe UI', Arial, sans-serif; color: var(--rm-ink); }
+button, input, textarea { font: inherit; }
+button:focus-visible, input:focus-visible, textarea:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid #b98b68; outline-offset: 3px; }
 #root { min-height: 100vh; }

@@ -35,7 +35,7 @@ export const registrar = async (req, res) => {
         }
 
         const passwordHash = await bcrypt.hash(password, 12)
-        const rol = "Cliente"
+        const rol = "Usuario"
         const [resultado] = await db.execute(
             "INSERT INTO usuarios (email, password_hash, rol) VALUES (?, ?, ?)",
             [email, passwordHash, rol]
