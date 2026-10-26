@@ -39,7 +39,7 @@ function Nosotros() {
           window.location.href = "/login";
         }}
         onRegister={() => {
-          window.location.href = "/login";
+          window.location.href = "/login?modo=registro";
         }}
         onLogout={cerrarSesion}
       />

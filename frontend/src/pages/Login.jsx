@@ -198,7 +198,9 @@ function RegisterForm({ onCancel, onRegistered }) {
 
 function Login() {
   const [session, setSession] = useState(getSavedSession)
-  const [formMode, setFormMode] = useState('login')
+  const [formMode, setFormMode] = useState(() => (
+    new URLSearchParams(window.location.search).get('modo') === 'registro' ? 'register' : 'login'
+  ))
   const [registeredEmail, setRegisteredEmail] = useState('')
   const [message, setMessage] = useState('')
 

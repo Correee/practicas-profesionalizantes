@@ -96,7 +96,7 @@ function Home() {
       <BrandHeader
         session={session}
         onLogin={() => { window.location.href = "/login"; }}
-        onRegister={() => { window.location.href = "/login"; }}
+        onRegister={() => { window.location.href = "/login?modo=registro"; }}
         onLogout={cerrarSesion}
       />
 

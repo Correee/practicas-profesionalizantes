@@ -108,6 +108,10 @@ function Catalogo() {
     window.location.href = '/login'
   }
 
+  function irARegistro() {
+    window.location.href = '/login?modo=registro'
+  }
+
   function cerrarSesion() {
     clearSession()
     setSession(null)
@@ -124,7 +128,7 @@ function Catalogo() {
 
   return (
     <div className="catalogo-page">
-      <BrandHeader session={session} onLogin={irALogin} onRegister={irALogin} onLogout={cerrarSesion} />
+      <BrandHeader session={session} onLogin={irALogin} onRegister={irARegistro} onLogout={cerrarSesion} />
 
       <main className="catalogo-main">
         <section className="catalogo-head">
